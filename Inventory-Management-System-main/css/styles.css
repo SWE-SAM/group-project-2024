@@ -3,7 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Chewy', cursive;
+
 }
 
 /* body and font */
@@ -11,9 +12,13 @@ body {
     font-family: Arial, sans-serif;
     color: #333;
     line-height: 1.6;
-    background-color: #C5EBC3;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
+}
+
+h1{
+    padding-top: 40px;
 }
 
 /* header */
@@ -22,7 +27,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 15px 20px;
-    background-color: #F4D7E4;
+    background-color: #F4D8E4;
     color: #fff;
     position: fixed;
     top: 0;
@@ -39,7 +44,7 @@ header {
 /* navbar*/
 .vertical-navbar {
     width: 200px;
-    background-color: #87AAB9;
+    background-color: #fff;
     height: 100vh;
     position: fixed;
     top: 60px; 
@@ -57,17 +62,24 @@ header {
     margin: 15px 0;
 }
 
+/* Default navbar styles */
 .vertical-navbar ul li a {
     display: block;
     padding: 10px;
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease; 
 }
 
 .vertical-navbar ul li a:hover {
-    background-color: #6C9BA5;
+    background-color: #F4D8E4;
+    transform: scale(1.1); 
+    border-radius: 50px; /* popout shape */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* popiout shape */
 }
+
 
 /* main content styling */
 main {
@@ -81,7 +93,7 @@ main {
 /* table styles */
 .table-container {
     width: 80%;
-    max-width: 800px;
+    max-width: 950px;
     margin: 20px auto;
     padding: 10px;
     box-sizing: border-box;
@@ -91,19 +103,68 @@ main {
 table {
     width: 100%;
     border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 th,
 td {
-    padding: 8px 10px;
+    padding: 12px 15px;
     width: 20%;
     text-align: center;
     border: 1px solid black;
 }
 
 th {
-    font-size: 15px;
+    font-size: 18px;
     border-bottom: 3px solid;
+    background-color: #b8e6b1;
+    font-weight: bold;
+}
+
+td {
+    font-size: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #e0f7de;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* action button styles */
+
+td.actions a {
+    display: block;
+    padding: 8px 12px;
+    margin: 4px 0;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    width: 80px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+td.actions a:hover {
+    opacity: 0.9;
+}
+
+td.actions a:nth-child(1) {
+    background-color: #81C784; /* order */
+    color: #333;
+}
+
+td.actions a:nth-child(2) {
+    background-color: #4FC3F7; /* edit */
+    color: #333;
+}
+
+td.actions a:nth-child(3) {
+    background-color: #FF8A80; /* remove */
+    color: #333;
 }
 
 /* button styles */
@@ -116,7 +177,7 @@ input[type=submit] {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     width: 30%;
     margin-top: 15px;
@@ -189,7 +250,6 @@ a:hover {
     margin: 13px;
 }
 
-
 /* dashboard grid format */
 .grid-container {
     display: grid;
@@ -203,13 +263,12 @@ a:hover {
 
 /* rectangle formats */
 .small-rectangle, .large-rectangle {
-    background-color: #87AAB9; 
+    background-color: #F4D7E4; 
     border: 1px solid #ccc;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 
 .small-rectangle {
     height: 200px; /* top row rectangles */
@@ -231,4 +290,33 @@ a:hover {
     height: 100%;
 }
 
+/* form styles */
+input:focus {
+    background-color: #F4D7E4;
+}
 
+form {
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.blank-error {
+    color: darkred;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.back-button {
+    font-weight: bold;
+    padding-left: 30px;
+    font-size:20px;
+}
+
+label{
+    text-align: left;
+    padding-top: 20px;
+    display: block;
+}
